@@ -1,31 +1,37 @@
 .homepage {
-    background-image:url(pastelbg.jpeg);
+    background-image:url(cafe\ background.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .heading, .heading2 {
-  border: 2px white solid;
+  border: 4px white solid;
   border-radius: 50px;
   font-size: 32px;
-  background-color: pink;
+  background-color:#BBD1F5;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
   text-decoration: none;
   margin-bottom: 2rem;
+  font-size: 60px;
   }
 
 .list {
+   border: white solid 5px;
+   border-radius: 50px;
    text-align: left; 
-   border: solid 2px white;
-   border-radius: 25px;
    margin: 3rem;
-   background-color: pink;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   width: 200px;
-   color: white;
+   width: 500px;
+   font-size: 50px;
+   
+  
+}
+
+.list:hover {
+   background: #FACDD6;
 }
 
 
@@ -59,4 +65,8 @@
   background-color: #BBD1F5;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul {
+  list-style-image: url(bubble-tea\ \(3\).png);
 }

@@ -11,7 +11,7 @@ app.get('/', (req, res, next) => {
    `<!DOCTYPE html>
 <html>
 <head>
-<title> Bubble Tea Drinks</title> 
+<title>Bubble Tea Shops</title> 
 <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -22,7 +22,7 @@ ${drinkInfo.map(drink => `
    <div class= 'list'>
      <ul>
       <a style="text-decoration: none;" href="/drinkDetails/${drink.id}">
-       <li style='color:white;'>${drink.store}</li>
+       <li style='color:black;'>${drink.store}</li>
      </ul>
      </a>
    </div>`
@@ -39,7 +39,7 @@ ${drinkInfo.map(drink => `
 })
 
 
-app.get('/drinkDetails/:id', (req, res,next) => {
+app.get('/drinkDetails/:id', (req, res, next) => {
     const drink = drinkDetails.find(req.params.id)
     const drinkInfo = [ drink ]
     const html = 
@@ -52,18 +52,18 @@ app.get('/drinkDetails/:id', (req, res,next) => {
 
    <body class='detailpage'>
    
-   <header class='heading2'><a style="color:white; text-decoration:none;"href='/'>Bubble Tea Shops in NYC</a></header>
+   <header class='heading2'><a style="color:white; text-decoration:none;" href='/'>Bubble Tea Shops in NYC</a></header>
 
     ${drinkInfo.map(drink => `
     
    <div class="store">${drink.store}</div>
    <div class='info'>
-     <ul>
+     
        <p> Location of Shop: ${drink.location}</p>
        <div> Drink Recommendation: "${drink.name}"</div>
        <p> Drink Details: ${drink.drinkInfo}</p>
        
-     </ul>
+     
    </div>`
 
 
