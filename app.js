@@ -16,13 +16,13 @@ app.get('/', (req, res, next) => {
 </head>
 
 <body class='homepage'>
-<header class='heading'>Bubble Tea Shops in NYC </header>
+<header style='background-color:pink;' class='heading'>Bubble Tea Shops in NYC </header>
 
 ${drinkInfo.map(drink => `
    <div class= 'list'>
      <ul>
       <a style="text-decoration: none;" href="/drinkDetails/${drink.id}">
-       <li style='color:black;'>${drink.store}</li>
+       <li style='color:white;'>${drink.store}</li>
      </ul>
      </a>
    </div>`
