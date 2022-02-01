@@ -1,24 +1,28 @@
 const express = require('express')
 const app = express()
 const drinkDetails = require('./drinkDetails')
+const path = require('path')
 
-app.get('/', (req, res) => {
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res, next) => {
    const drinkInfo = drinkDetails.list();
    const html = 
    `<!DOCTYPE html>
 <html>
 <head>
 <title> Bubble Tea Drinks</title> 
+<link rel="stylesheet" href="/style.css" />
 </head>
 
-<body>
-<header style='font-size:32px'>Bubble Tea Shops in NYC </header>
+<body class='homepage'>
+<header class='heading'>Bubble Tea Shops in NYC </header>
 
 ${drinkInfo.map(drink => `
-   <div>
+   <div class= 'list'>
      <ul>
       <a style="text-decoration: none;" href="/drinkDetails/${drink.id}">
-       <li style= "color: black">${drink.store}</li>
+       <li style='color:white;'>${drink.store}</li>
      </ul>
      </a>
    </div>`
@@ -30,11 +34,12 @@ ${drinkInfo.map(drink => `
 </html>
 `
    res.send(html)
+   next();
     
 })
 
 
-app.get('/drinkDetails/:id', (req, res) => {
+app.get('/drinkDetails/:id', (req, res,next) => {
     const drink = drinkDetails.find(req.params.id)
     const drinkInfo = [ drink ]
     const html = 
@@ -42,16 +47,17 @@ app.get('/drinkDetails/:id', (req, res) => {
     <html>
     <head>
     <title> Bubble Tea Drinks</title> 
+    <link rel="stylesheet" href="/style.css" />
     </head>
 
-   <body>
+   <body class='detailpage'>
    
-   <header><a style='text-decoration:none; color:black; font-size:32px;' href='/'>Bubble Tea Shops in NYC</a></header>
+   <header class='heading2'><a style="color:white; text-decoration:none;"href='/'>Bubble Tea Shops in NYC</a></header>
 
     ${drinkInfo.map(drink => `
     
-   <h3>${drink.store}</h3>
-   <div>
+   <div class="store">${drink.store}</div>
+   <div class='info'>
      <ul>
        <p> Location of Shop: ${drink.location}</p>
        <div> Drink Recommendation: "${drink.name}"</div>
@@ -67,7 +73,7 @@ app.get('/drinkDetails/:id', (req, res) => {
 </html>
 ` 
  res.send(html)
-
+ next();
 })
 
 
