@@ -45,27 +45,28 @@
 
 .store {
    color: white;
-   border: solid 2px white ;
+   border: solid 3px white ;
    width: 200px;
    background-color: #BBD1F5;
    text-align: center;
    margin: auto;
    width: 50%;
-   padding: 10px;
-   border-radius: 50px;
+   padding: 15px;
+   border-radius: 40px;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   font-size: 60px;
+   font-size: 40px;
 }
 
 .info {
   border: solid 3px #BBD1F5;
   width: 50%;
-  padding: 10px;
-  border-radius: 50px;
+  padding: 1.5rem;
+  border-radius: 60px;
   margin: auto;
   background-color: #BBD1F5;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
 }
 
 ul {
